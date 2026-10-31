@@ -1,0 +1,33 @@
+name: ci
+
+# The checks of this site. They need no secrets: the build reads only the files of this repo
+# and the packages on npm.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # The config, the content and the brand.
+      - run: pnpm check
+      - run: pnpm typecheck
+      # The static site in out/, then the check that every colour and font comes from the brand.
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e

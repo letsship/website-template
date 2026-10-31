@@ -1,0 +1,2339 @@
+{
+  "$schema": "../../../schemas/dna.v1.json",
+  "brand": {
+    "audience": [],
+    "id": "starter",
+    "links": {},
+    "locales": [
+      "en"
+    ],
+    "name": "Your Company",
+    "version": "1.0.0"
+  },
+  "colorPolicy": {
+    "gradients": "none",
+    "usage": [
+      {
+        "percent": 60,
+        "role": "surface"
+      },
+      {
+        "percent": 25,
+        "role": "on-surface"
+      },
+      {
+        "percent": 12,
+        "role": "primary"
+      },
+      {
+        "percent": 3,
+        "role": "accent"
+      }
+    ]
+  },
+  "components": {
+    "badge": {
+      "background": "{color.role.accent}",
+      "foreground": "{color.role.on-accent}",
+      "paddingX": "{space.sm}",
+      "paddingY": "{space.xs}",
+      "radius": "{radius.full}",
+      "typography": "{typography.caption}"
+    },
+    "button-primary": {
+      "background": "{color.role.primary}",
+      "foreground": "{color.role.on-primary}",
+      "paddingX": "{space.md}",
+      "paddingY": "{space.sm}",
+      "radius": "{radius.md}",
+      "typography": "{typography.button}"
+    },
+    "card": {
+      "background": "{color.role.surface-alt}",
+      "border": "{color.role.border}",
+      "foreground": "{color.role.on-surface}",
+      "paddingX": "{space.lg}",
+      "paddingY": "{space.lg}",
+      "radius": "{radius.lg}",
+      "typography": "{typography.body}"
+    }
+  },
+  "contrast": {
+    "pairs": [
+      {
+        "bg": "primary",
+        "fg": "on-primary",
+        "level": "AA",
+        "mode": "light",
+        "ratio": 5.26
+      },
+      {
+        "bg": "secondary",
+        "fg": "on-secondary",
+        "level": "AAA",
+        "mode": "light",
+        "ratio": 12.74
+      },
+      {
+        "bg": "accent",
+        "fg": "on-accent",
+        "level": "AAA",
+        "mode": "light",
+        "ratio": 9.98
+      },
+      {
+        "bg": "surface",
+        "fg": "on-surface",
+        "level": "AAA",
+        "mode": "light",
+        "ratio": 16.39
+      },
+      {
+        "bg": "surface-alt",
+        "fg": "on-surface",
+        "level": "AAA",
+        "mode": "light",
+        "ratio": 15.27
+      },
+      {
+        "bg": "surface",
+        "fg": "muted",
+        "level": "AA",
+        "mode": "light",
+        "ratio": 6.79
+      },
+      {
+        "bg": "surface",
+        "fg": "primary",
+        "level": "AA",
+        "mode": "light",
+        "ratio": 5.26
+      },
+      {
+        "bg": "surface",
+        "fg": "danger",
+        "level": "AA",
+        "mode": "light",
+        "ratio": 4.82
+      },
+      {
+        "bg": "primary",
+        "fg": "on-primary",
+        "level": "AA",
+        "mode": "dark",
+        "ratio": 6.39
+      },
+      {
+        "bg": "secondary",
+        "fg": "on-secondary",
+        "level": "AAA",
+        "mode": "dark",
+        "ratio": 12.74
+      },
+      {
+        "bg": "accent",
+        "fg": "on-accent",
+        "level": "AAA",
+        "mode": "dark",
+        "ratio": 9.98
+      },
+      {
+        "bg": "surface",
+        "fg": "on-surface",
+        "level": "AAA",
+        "mode": "dark",
+        "ratio": 16.39
+      },
+      {
+        "bg": "surface-alt",
+        "fg": "on-surface",
+        "level": "AAA",
+        "mode": "dark",
+        "ratio": 12.74
+      },
+      {
+        "bg": "surface",
+        "fg": "muted",
+        "level": "AAA",
+        "mode": "dark",
+        "ratio": 9.09
+      },
+      {
+        "bg": "surface",
+        "fg": "primary",
+        "level": "AA",
+        "mode": "dark",
+        "ratio": 6.39
+      },
+      {
+        "bg": "surface",
+        "fg": "danger",
+        "level": "AA",
+        "mode": "dark",
+        "ratio": 5.7
+      }
+    ]
+  },
+  "fonts": [
+    {
+      "family": "IBM Plex Sans",
+      "files": [
+        {
+          "blob": "sha256:3b646991d30055a93a4ecc499713d4347953a74a947ecab435ab72070cbdab0e",
+          "format": "woff2",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "blob": "sha256:8960851d691c054ed38e259bdcf1a6190d157b4203ed5bb32c632a863fb8ec2f",
+          "format": "woff2",
+          "style": "normal",
+          "weight": 600
+        },
+        {
+          "blob": "sha256:42e7b0c143c19df9d99fd896e76b48f846edf0902d200bc29796b34d12c33aa7",
+          "format": "woff2",
+          "style": "normal",
+          "weight": 700
+        }
+      ],
+      "license": "OFL-1.1",
+      "origin": "fontsource",
+      "substituteFor": null
+    },
+    {
+      "family": "IBM Plex Mono",
+      "files": [
+        {
+          "blob": "sha256:08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+          "format": "woff2",
+          "style": "normal",
+          "weight": 400
+        }
+      ],
+      "license": "OFL-1.1",
+      "origin": "fontsource",
+      "substituteFor": null
+    }
+  ],
+  "imagery": {
+    "devices": [
+      "thin grid lines"
+    ],
+    "gradeStrength": 0.3,
+    "icons": {
+      "corner": "rounded",
+      "strokePx": 1.5,
+      "style": "outline",
+      "suggested": "lucide"
+    },
+    "library": [],
+    "overlay": {
+      "opacity": 0.55,
+      "role": "on-surface"
+    },
+    "photo": {
+      "framing": "candid",
+      "lighting": "soft daylight",
+      "subjects": [
+        "people at work",
+        "workspaces"
+      ],
+      "treatment": "natural, low contrast"
+    },
+    "promptFragments": {
+      "negative": [
+        "neon",
+        "3d render",
+        "text",
+        "logos"
+      ],
+      "positive": [
+        "soft daylight",
+        "calm neutral palette"
+      ]
+    },
+    "provenance": {
+      "method": "user"
+    },
+    "styleRefs": []
+  },
+  "layout": {
+    "grid": {
+      "columns": 12,
+      "gutterPx": 24,
+      "marginPx": 32
+    },
+    "maxWidthPx": 1200
+  },
+  "logo": {
+    "clearSpace": {
+      "unit": "mark-height",
+      "value": 0.5
+    },
+    "minSizePx": 16,
+    "misuse": [
+      "Don't stretch or rotate the mark",
+      "Don't recolour the mark outside the palette"
+    ],
+    "variants": [
+      {
+        "allowedOn": [
+          "surface",
+          "surface-alt"
+        ],
+        "aspect": 1,
+        "colorMode": "full",
+        "id": "primary",
+        "layout": "symbol",
+        "svg": "sha256:0232368d447973545917178d1cb5a9eb347370757f875ca25b2acb20166ec422"
+      }
+    ]
+  },
+  "messaging": {
+    "boilerplate": {
+      "long": "Your Company says what it does, what it costs and how to start, on one site with plain words.",
+      "medium": "What Your Company does, what it costs and how to start.",
+      "short": "What Your Company does, and how to start."
+    },
+    "ctas": [
+      "See the prices",
+      "Get in touch"
+    ],
+    "hashtags": [],
+    "pillars": [
+      {
+        "claim": "Plain words, short posts",
+        "id": "clarity",
+        "proof": [
+          "Each post makes one point"
+        ]
+      },
+      {
+        "claim": "Work shown, not described",
+        "id": "craft",
+        "proof": [
+          "Posts show the real steps"
+        ]
+      }
+    ],
+    "positioning": "Your Company says what it does and how to start, in plain words.",
+    "provenance": {
+      "method": "user"
+    }
+  },
+  "motion": {
+    "logoReveal": {
+      "durationMs": 600,
+      "ease": "standard",
+      "style": "mask"
+    },
+    "personality": "snappy",
+    "typing": {
+      "charsPerSecond": 32,
+      "jitterMs": 18
+    }
+  },
+  "patterns": {
+    "dot-grid": {
+      "description": "Dot grid on a 96px hairline grid, for covers and share images",
+      "for": [
+        "web.og-image",
+        "*.profile.header",
+        "*.company.cover"
+      ],
+      "layers": [
+        {
+          "cellPx": 24,
+          "color": "muted",
+          "kind": "dots",
+          "opacity": 0.18,
+          "radiusPx": 1.5
+        },
+        {
+          "cellPx": 96,
+          "color": "border",
+          "kind": "grid",
+          "opacity": 0.6,
+          "strokePx": 1
+        }
+      ],
+      "provenance": {
+        "method": "user"
+      },
+      "referenceWidthPx": 1200
+    }
+  },
+  "rules": [
+    {
+      "check": "logo/allowed-surface",
+      "id": "logo-on-photo",
+      "kind": "dont",
+      "severity": "error",
+      "text": "Never place the full-colour logo on photography."
+    },
+    {
+      "advisory": true,
+      "id": "one-accent",
+      "kind": "do",
+      "severity": "warning",
+      "text": "Use the accent colour once per composition."
+    },
+    {
+      "check": "contrast/pair-fails",
+      "id": "text-contrast",
+      "kind": "do",
+      "severity": "error",
+      "text": "Keep every text pair at WCAG AA or better."
+    }
+  ],
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "src_preset",
+      "kind": "questionnaire",
+      "uri": "preset://slate"
+    }
+  ],
+  "tokens": {
+    "border-width": {
+      "thick": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 2
+        }
+      },
+      "thin": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 1
+        }
+      }
+    },
+    "color": {
+      "palette": {
+        "accent": {
+          "50": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.975,
+                0.0142,
+                229.95
+              ],
+              "hex": "#eef9ff"
+            }
+          },
+          "100": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.94,
+                0.0295,
+                229.95
+              ],
+              "hex": "#d8effb"
+            }
+          },
+          "200": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.885,
+                0.0531,
+                229.95
+              ],
+              "hex": "#b6e0f6"
+            }
+          },
+          "300": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "user"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.8332,
+                0.0826,
+                229.95
+              ],
+              "hex": "#8fd3f4"
+            }
+          },
+          "400": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.71,
+                0.1062,
+                229.95
+              ],
+              "hex": "#51aed7"
+            }
+          },
+          "500": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.625,
+                0.118,
+                229.95
+              ],
+              "hex": "#1c94c1"
+            }
+          },
+          "600": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.5533,
+                0.1128,
+                231.92
+              ],
+              "hex": "#007da9"
+            }
+          },
+          "700": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.4748,
+                0.0985,
+                233.33
+              ],
+              "hex": "#00648a"
+            }
+          },
+          "800": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.3941,
+                0.0819,
+                233.43
+              ],
+              "hex": "#004d6b"
+            }
+          },
+          "900": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.3227,
+                0.0664,
+                232.74
+              ],
+              "hex": "#003950"
+            }
+          },
+          "950": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.242,
+                0.0498,
+                232.74
+              ],
+              "hex": "#002333"
+            }
+          }
+        },
+        "brand": {
+          "50": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.975,
+                0.0047,
+                257.87
+              ],
+              "hex": "#f5f7fa"
+            }
+          },
+          "100": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.94,
+                0.0098,
+                257.87
+              ],
+              "hex": "#e7ebf2"
+            }
+          },
+          "200": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.885,
+                0.0176,
+                257.87
+              ],
+              "hex": "#d2dae5"
+            }
+          },
+          "300": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.81,
+                0.0274,
+                257.87
+              ],
+              "hex": "#b6c2d3"
+            }
+          },
+          "400": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.71,
+                0.0353,
+                257.87
+              ],
+              "hex": "#94a3b8"
+            }
+          },
+          "500": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.625,
+                0.0392,
+                257.87
+              ],
+              "hex": "#7989a0"
+            }
+          },
+          "600": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "user"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.5306,
+                0.0392,
+                257.87
+              ],
+              "hex": "#5e6d83"
+            }
+          },
+          "700": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.47,
+                0.0353,
+                257.87
+              ],
+              "hex": "#4f5c6f"
+            }
+          },
+          "800": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.39,
+                0.0294,
+                257.87
+              ],
+              "hex": "#3b4655"
+            }
+          },
+          "900": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.32,
+                0.0235,
+                257.87
+              ],
+              "hex": "#2b333f"
+            }
+          },
+          "950": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.24,
+                0.0176,
+                257.87
+              ],
+              "hex": "#1a2028"
+            }
+          }
+        },
+        "green": {
+          "50": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.975,
+                0.0204,
+                149.21
+              ],
+              "hex": "#eefbef"
+            }
+          },
+          "100": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.94,
+                0.0425,
+                149.21
+              ],
+              "hex": "#d8f4dc"
+            }
+          },
+          "200": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.885,
+                0.0765,
+                149.21
+              ],
+              "hex": "#b6e8be"
+            }
+          },
+          "300": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.81,
+                0.1189,
+                149.21
+              ],
+              "hex": "#88d697"
+            }
+          },
+          "400": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.71,
+                0.1529,
+                149.21
+              ],
+              "hex": "#50bb6b"
+            }
+          },
+          "500": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "user"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.6271,
+                0.1699,
+                149.21
+              ],
+              "hex": "#16a34a"
+            }
+          },
+          "600": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.5544,
+                0.1632,
+                147.35
+              ],
+              "hex": "#008b32"
+            }
+          },
+          "700": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.476,
+                0.1439,
+                146.38
+              ],
+              "hex": "#007023"
+            }
+          },
+          "800": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.3951,
+                0.1197,
+                146.3
+              ],
+              "hex": "#005618"
+            }
+          },
+          "900": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.3234,
+                0.0967,
+                146.78
+              ],
+              "hex": "#004011"
+            }
+          },
+          "950": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.2426,
+                0.0725,
+                146.78
+              ],
+              "hex": "#002808"
+            }
+          }
+        },
+        "neutral": {
+          "0": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "user"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                1,
+                0,
+                0
+              ],
+              "hex": "#ffffff"
+            }
+          },
+          "50": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.975,
+                0.0049,
+                257.42
+              ],
+              "hex": "#f5f7fa"
+            }
+          },
+          "100": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.94,
+                0.0102,
+                257.42
+              ],
+              "hex": "#e7ecf2"
+            }
+          },
+          "200": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.885,
+                0.0183,
+                257.42
+              ],
+              "hex": "#d2dae5"
+            }
+          },
+          "300": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.81,
+                0.0285,
+                257.42
+              ],
+              "hex": "#b6c2d4"
+            }
+          },
+          "400": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.71,
+                0.0366,
+                257.42
+              ],
+              "hex": "#93a3b9"
+            }
+          },
+          "500": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.625,
+                0.0407,
+                257.42
+              ],
+              "hex": "#7889a1"
+            }
+          },
+          "600": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "user"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.5544,
+                0.0407,
+                257.42
+              ],
+              "hex": "#64748b"
+            }
+          },
+          "700": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.47,
+                0.0366,
+                257.42
+              ],
+              "hex": "#4e5c70"
+            }
+          },
+          "800": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.39,
+                0.0305,
+                257.42
+              ],
+              "hex": "#3b4656"
+            }
+          },
+          "900": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.32,
+                0.0244,
+                257.42
+              ],
+              "hex": "#2b333f"
+            }
+          },
+          "950": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.24,
+                0.0183,
+                257.42
+              ],
+              "hex": "#1a2028"
+            }
+          }
+        },
+        "red": {
+          "50": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.9676,
+                0.0161,
+                33.18
+              ],
+              "hex": "#fff1ed"
+            }
+          },
+          "100": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.9276,
+                0.0371,
+                31.04
+              ],
+              "hex": "#ffdfd8"
+            }
+          },
+          "200": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.8719,
+                0.0685,
+                28.99
+              ],
+              "hex": "#ffc5bb"
+            }
+          },
+          "300": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.7957,
+                0.1175,
+                27.94
+              ],
+              "hex": "#ff9e92"
+            }
+          },
+          "400": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.7029,
+                0.1886,
+                27.34
+              ],
+              "hex": "#ff665b"
+            }
+          },
+          "500": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.625,
+                0.2152,
+                27.33
+              ],
+              "hex": "#ee3b36"
+            }
+          },
+          "600": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "user"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.5771,
+                0.2152,
+                27.33
+              ],
+              "hex": "#dc2626"
+            }
+          },
+          "700": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.4712,
+                0.1924,
+                27.62
+              ],
+              "hex": "#ae000c"
+            }
+          },
+          "800": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.3915,
+                0.1599,
+                27.74
+              ],
+              "hex": "#870007"
+            }
+          },
+          "900": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.32,
+                0.1291,
+                27.33
+              ],
+              "hex": "#650105"
+            }
+          },
+          "950": {
+            "$extensions": {
+              "dna": {
+                "provenance": {
+                  "method": "tonal-scale"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": {
+              "colorSpace": "oklch",
+              "components": [
+                0.24,
+                0.0968,
+                27.33
+              ],
+              "hex": "#420102"
+            }
+          }
+        }
+      },
+      "role": {
+        "accent": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.accent.300}"
+        },
+        "border": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.200}"
+        },
+        "danger": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.red.600}"
+        },
+        "muted": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.700}"
+        },
+        "on-accent": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "contrast-solve"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.950}"
+        },
+        "on-primary": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "contrast-solve"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.0}"
+        },
+        "on-secondary": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "contrast-solve"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.0}"
+        },
+        "on-surface": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "contrast-solve"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.950}"
+        },
+        "primary": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.brand.600}"
+        },
+        "secondary": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.900}"
+        },
+        "success": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.green.500}"
+        },
+        "surface": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.0}"
+        },
+        "surface-alt": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.50}"
+        },
+        "warning": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.accent.300}"
+        }
+      },
+      "role-dark": {
+        "border": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.800}"
+        },
+        "danger": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.red.400}"
+        },
+        "muted": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.300}"
+        },
+        "on-primary": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "contrast-solve"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.950}"
+        },
+        "on-surface": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "contrast-solve"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.0}"
+        },
+        "primary": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.brand.400}"
+        },
+        "surface": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.950}"
+        },
+        "surface-alt": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "color",
+          "$value": "{color.palette.neutral.900}"
+        }
+      }
+    },
+    "font": {
+      "body": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "fontFamily",
+        "$value": [
+          "IBM Plex Sans",
+          "ui-sans-serif",
+          "sans-serif"
+        ]
+      },
+      "display": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "fontFamily",
+        "$value": [
+          "IBM Plex Sans",
+          "ui-sans-serif",
+          "sans-serif"
+        ]
+      },
+      "mono": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "fontFamily",
+        "$value": [
+          "IBM Plex Mono",
+          "ui-monospace",
+          "monospace"
+        ]
+      }
+    },
+    "motion": {
+      "duration": {
+        "base": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "duration",
+          "$value": {
+            "unit": "ms",
+            "value": 200
+          }
+        },
+        "fast": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "duration",
+          "$value": {
+            "unit": "ms",
+            "value": 120
+          }
+        },
+        "slow": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "duration",
+          "$value": {
+            "unit": "ms",
+            "value": 360
+          }
+        }
+      },
+      "ease": {
+        "exit": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "cubicBezier",
+          "$value": [
+            0.4,
+            0,
+            1,
+            1
+          ]
+        },
+        "standard": {
+          "$extensions": {
+            "dna": {
+              "provenance": {
+                "method": "user"
+              }
+            }
+          },
+          "$type": "cubicBezier",
+          "$value": [
+            0.2,
+            0,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    "radius": {
+      "full": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 9999
+        }
+      },
+      "lg": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 4
+        }
+      },
+      "md": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 2
+        }
+      },
+      "sm": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 0
+        }
+      }
+    },
+    "shadow": {
+      "md": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "shadow",
+        "$value": {
+          "blur": {
+            "unit": "px",
+            "value": 12
+          },
+          "color": {
+            "alpha": 0.12,
+            "colorSpace": "oklch",
+            "components": [
+              0.2077,
+              0.0398,
+              265.75
+            ],
+            "hex": "#0f172a"
+          },
+          "offsetX": {
+            "unit": "px",
+            "value": 0
+          },
+          "offsetY": {
+            "unit": "px",
+            "value": 4
+          },
+          "spread": {
+            "unit": "px",
+            "value": 0
+          }
+        }
+      }
+    },
+    "space": {
+      "2xl": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 64
+        }
+      },
+      "base": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 4
+        }
+      },
+      "lg": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 24
+        }
+      },
+      "md": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 16
+        }
+      },
+      "sm": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 8
+        }
+      },
+      "xl": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 40
+        }
+      },
+      "xs": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "dimension",
+        "$value": {
+          "unit": "px",
+          "value": 4
+        }
+      }
+    },
+    "typography": {
+      "body": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.body}",
+          "fontSize": {
+            "unit": "px",
+            "value": 16
+          },
+          "fontWeight": 400,
+          "lineHeight": 1.6
+        }
+      },
+      "body-sm": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.body}",
+          "fontSize": {
+            "unit": "px",
+            "value": 14
+          },
+          "fontWeight": 400,
+          "lineHeight": 1.5
+        }
+      },
+      "button": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.body}",
+          "fontSize": {
+            "unit": "px",
+            "value": 15
+          },
+          "fontWeight": 600,
+          "lineHeight": 1.2
+        }
+      },
+      "caption": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.body}",
+          "fontSize": {
+            "unit": "px",
+            "value": 12
+          },
+          "fontWeight": 400,
+          "lineHeight": 1.4
+        }
+      },
+      "display": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.display}",
+          "fontSize": {
+            "unit": "px",
+            "value": 64
+          },
+          "fontWeight": 700,
+          "letterSpacing": {
+            "unit": "px",
+            "value": -1
+          },
+          "lineHeight": 1.05
+        }
+      },
+      "h1": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.display}",
+          "fontSize": {
+            "unit": "px",
+            "value": 48
+          },
+          "fontWeight": 700,
+          "letterSpacing": {
+            "unit": "px",
+            "value": -0.5
+          },
+          "lineHeight": 1.1
+        }
+      },
+      "h2": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.display}",
+          "fontSize": {
+            "unit": "px",
+            "value": 36
+          },
+          "fontWeight": 700,
+          "lineHeight": 1.15
+        }
+      },
+      "h3": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.display}",
+          "fontSize": {
+            "unit": "px",
+            "value": 28
+          },
+          "fontWeight": 700,
+          "lineHeight": 1.2
+        }
+      },
+      "h4": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.body}",
+          "fontSize": {
+            "unit": "px",
+            "value": 22
+          },
+          "fontWeight": 600,
+          "lineHeight": 1.3
+        }
+      },
+      "overline": {
+        "$extensions": {
+          "dna": {
+            "provenance": {
+              "method": "user"
+            }
+          }
+        },
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.body}",
+          "fontSize": {
+            "unit": "px",
+            "value": 12
+          },
+          "fontWeight": 600,
+          "letterSpacing": {
+            "unit": "px",
+            "value": 1
+          },
+          "lineHeight": 1.4,
+          "textTransform": "uppercase"
+        }
+      }
+    }
+  },
+  "typeScale": {
+    "basePx": 16,
+    "provenance": {
+      "method": "user"
+    },
+    "ratio": 1.333
+  },
+  "voice": {
+    "lexicon": {
+      "ban": [
+        "synergy",
+        "revolutionary",
+        "leverage",
+        "seamless"
+      ],
+      "prefer": {
+        "utilize": "use"
+      }
+    },
+    "mechanics": {
+      "case": "sentence",
+      "emoji": "never",
+      "maxExclamations": 0,
+      "maxReadingGrade": 9,
+      "maxSentenceWords": 22,
+      "oxfordComma": true
+    },
+    "provenance": {
+      "method": "user"
+    },
+    "samples": [
+      "Your Company writes in short, plain sentences. Each post says one thing and shows how."
+    ],
+    "tone": {
+      "enthusiasm": 3,
+      "formality": 2,
+      "playfulness": 2,
+      "technicality": 4,
+      "warmth": 3
+    },
+    "traits": [
+      {
+        "is": "confident",
+        "isNot": "arrogant"
+      },
+      {
+        "is": "plain-spoken",
+        "isNot": "jargon-heavy"
+      },
+      {
+        "is": "calm",
+        "isNot": "alarmist"
+      }
+    ]
+  }
+}

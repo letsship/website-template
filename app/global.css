@@ -1,0 +1,17 @@
+@import "tailwindcss";
+/*
+ * The brand first: site-theme.css sets every --color-fd-* role and the --dna-* tokens, and
+ * fonts.css loads the brand's fonts. Both are compiled from brand/brand.dna.json by ship-site;
+ * they replace a fumadocs colour preset.
+ */
+@import "../.ship-site/theme/site-theme.css";
+@import "../.ship-site/theme/fonts/fonts.css";
+@import "fumadocs-ui/css/preset.css";
+@import "@lets-ship/site/styles.css";
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-display);
+}

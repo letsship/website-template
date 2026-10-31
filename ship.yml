@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://letsship.ai/schema/ship.yml.json
+#
+# How SHIP works on this repo: https://letsship.ai/docs/configuration/schema
+version: 1
+# SHIP builds the site and hosts its static export, for a repo made from a SHIP site template.
+# The preview is for each pull request, and QA tests it, or the local surface below when SHIP
+# hosts none. Production is the site itself: each push to the default branch publishes it.
+deployments:
+  preview:
+    type: ship-hosted
+    build: "pnpm run build"
+    output: "out"
+  production:
+    type: ship-hosted
+    build: "pnpm run build"
+    output: "out"
+qaSurface:
+  surface: web
+  build: "pnpm run qa:build"
+  serve: "pnpm run qa:serve"
+  servePort: 3100

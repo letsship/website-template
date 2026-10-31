@@ -1,0 +1,45 @@
+{
+	"name": "website-template",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"description": "A website on SHIP Sites: pages built from section blocks, themed by this repo's brand DNA.",
+	"license": "MIT",
+	"scripts": {
+		"dev": "ship-site dev",
+		"build": "ship-site build",
+		"check": "ship-site check && dna lint brand/brand.dna.json --assets brand/assets",
+		"typecheck": "ship-site theme && fumadocs-mdx && tsc --noEmit",
+		"serve": "ship-site serve out",
+		"qa:build": "pnpm run build",
+		"qa:serve": "ship-site serve out --port ${PORT:-3100}",
+		"test:e2e": "playwright test",
+		"test:determinism": "node scripts/determinism.mjs"
+	},
+	"dependencies": {
+		"@lets-ship/brand-dna": "^0.0.0",
+		"@lets-ship/site": "^0.0.0",
+		"fumadocs-core": "16.17.5",
+		"fumadocs-mdx": "15.4.7",
+		"fumadocs-ui": "npm:@fumadocs/base-ui@16.17.5",
+		"next": "^16.2.12",
+		"react": "^19.2.6",
+		"react-dom": "^19.2.6"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.49.1",
+		"@tailwindcss/postcss": "^4.3.0",
+		"@types/mdx": "^2.0.14",
+		"@types/node": "^22.0.0",
+		"@types/react": "^19.0.0",
+		"@types/react-dom": "^19.0.0",
+		"tailwindcss": "^4.3.0",
+		"typescript": "^5.7.3"
+	},
+	"browserslist": [
+		"chrome >= 111",
+		"edge >= 111",
+		"firefox >= 113",
+		"safari >= 16.4"
+	]
+}

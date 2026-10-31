@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.source/
+next-env.d.ts
+# Written by `ship-site` from brand/brand.dna.json on every build.
+.ship-site/
+public/_brand/
+# Written by the smoke test.
+test-results/
+playwright-report/
