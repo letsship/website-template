@@ -1,0 +1,8 @@
+# Written by SHIP: the supply-chain policy every install of this site resolves under.
+# A version younger than a day is not installed. The SHIP Sites packages are exempt,
+# so a site can take a SHIP release on the day it ships.
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - "@lets-ship/*"
+allowBuilds:
+  esbuild: false

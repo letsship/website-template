@@ -41,5 +41,6 @@
 		"edge >= 111",
 		"firefox >= 113",
 		"safari >= 16.4"
-	]
+	],
+	"packageManager": "pnpm@11.13.1"
 }
