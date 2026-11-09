@@ -13,12 +13,13 @@
 		"serve": "ship-site serve out",
 		"qa:build": "pnpm run build",
 		"qa:serve": "ship-site serve out --port ${PORT:-3100}",
-		"test:e2e": "playwright test",
+		"test": "node scripts/site-worker.mjs test",
+		"test:e2e": "playwright test && node scripts/site-worker.mjs e2e",
 		"test:determinism": "node scripts/determinism.mjs"
 	},
 	"dependencies": {
-		"@lets-ship/brand-dna": "^0.0.0",
-		"@lets-ship/site": "^0.0.0",
+		"@lets-ship/brand-dna": "^1.0.0",
+		"@lets-ship/site": "^1.0.0",
 		"fumadocs-core": "16.17.5",
 		"fumadocs-mdx": "15.4.7",
 		"fumadocs-ui": "npm:@fumadocs/base-ui@16.17.5",

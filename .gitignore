@@ -9,3 +9,5 @@ public/_brand/
 # Written by the smoke test.
 test-results/
 playwright-report/
+# Written by the waitlist e2e test (e2e-worker/serve.mjs).
+.e2e-site/

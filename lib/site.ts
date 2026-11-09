@@ -5,6 +5,7 @@ import { urlPaths } from "@lets-ship/site/site/url-style";
 import { loader } from "fumadocs-core/source";
 import { docs, pages, posts } from "@/.source/server";
 import dna from "../brand/brand.dna.json";
+import { components } from "../site.components";
 import { site } from "../site.config";
 
 /** A content file's slug: its path below the content folder, without the extension; "" for an index. */
@@ -53,9 +54,6 @@ function docsSource(): DocsSource {
 		})),
 	};
 }
-
-/** The site's own MDX components, which site.config.ts names in `mdxComponents`. */
-const components = {};
 
 /** The whole site: its facts from the brand DNA, its structure from site.config.ts, its content. */
 export const app = createSiteApp({

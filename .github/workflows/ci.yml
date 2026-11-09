@@ -26,6 +26,8 @@ jobs:
       # The config, the content and the brand.
       - run: pnpm check
       - run: pnpm typecheck
+      # The unit tests of the site Worker, on a site that has one.
+      - run: pnpm run --if-present test
       # The static site in out/, then the check that every colour and font comes from the brand.
       - run: pnpm build
       - run: pnpm exec playwright install --with-deps chromium
