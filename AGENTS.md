@@ -5,7 +5,7 @@ This repo is a static site on SHIP Sites. The site engine, `@lets-ship/site`, bu
 | Input | File | It owns |
 |---|---|---|
 | Brand | `brand/brand.dna.json` | The name, the description, the links, the colours, the fonts, the logos and the voice. |
-| Structure | `site.config.ts` | The sections and their paths, the navigation, the footer and the optional files. |
+| Structure | `site.config.ts` | The sections and their paths, the navigation, the layouts of the header and the footer, and the optional files. |
 | Words | `content/` | The pages (`content/pages/`), the posts (`content/posts/`) and the docs (`content/docs/`), in MDX. |
 
 Docs: https://letsship.ai/docs/sites. Config schema: https://letsship.ai/schema/site.json.
@@ -30,7 +30,8 @@ Every change must pass `pnpm check`, `pnpm typecheck`, `pnpm build` and `pnpm te
 - **Every page stays static.** The pages are files: no API route in `app/`, no server action, no request-time data. Code that runs on a request goes only into the site Worker that `ship.yml` names in `worker`. SHIP runs that Worker only for a site that SHIP made.
 - **The site Worker stays small.** It lives in `public/_worker/` as ES modules, and it imports only its own modules by a relative path, with no package. All of its modules together stay under 1 MiB. It has three bindings: `ASSETS`, `DB` and `TURNSTILE_SECRET_KEY`. It may call only Turnstile's siteverify, and SHIP refuses any other call.
 - **A database change is a new file in `migrations/`,** named like `0002_add_name.sql`. Never edit a file that a deploy applied. Each deploy applies the new files first, and a file that fails stops the deploy.
-- **Use only the components the site allows.** The section blocks are Hero, FeatureGrid, Steps, Pricing, Testimonials, LogoCloud, Stats, Faq, CallToAction, Team and Contact. Their props are at https://letsship.ai/docs/sites/blocks. A component of your own must be named in `mdxComponents` in `site.config.ts` and exported from `site.components.ts`.
+- **Use only the components the site allows.** The section blocks are Hero, FeatureGrid, Steps, Pricing, Testimonials, LogoCloud, Stats, Faq, CallToAction, Team, Contact, Announcement, Newsletter, MediaSection, CardGrid, EmptyState, PriceList, Hours and Location, and `Button` puts a button inside text. Most blocks have more than one layout, and the `variant` prop picks one. Their props and layouts are at https://letsship.ai/docs/sites/blocks. A component of your own must be named in `mdxComponents` in `site.config.ts` and exported from `site.components.ts`.
+- **Compose pages in the design language of the DNA** (`visual`, `composition`, `containers`, `emphasis`, `colorPolicy.accent`). Give each section one job and the block that fits it. Mark where one idea ends with a block's `tone` (`base`, `tint`, `inverse` or `brand`), and use only the tones in `composition.tones`. `pnpm check` refuses any other tone. Never work around a pattern in `visual.avoid` with CSS: change the content or the DNA.
 - **Write in the voice of the DNA** (`voice.traits`, `voice.lexicon`, `voice.mechanics`). Never invent facts, quotes, prices, customers or testimonials, and never make a claim about a real person. A placeholder says it is a placeholder.
 - **Never remove the "Built with SHIP" badge.** `footer.badge` is the site owner's choice, and only a plan that allows it can turn it off.
 - **Never edit or commit generated folders:** `.ship-site/`, `public/_brand/`, `out/`, `.source/` and `.next/`.

@@ -23,14 +23,23 @@ export class TurnstileSiteKeyMissingError extends Error {
  * the site's database. Every word a visitor reads comes from the props, in the site's language.
  */
 export function Waitlist({
+	id,
+	tone,
 	title,
 	intro,
 	...words
-}: WaitlistWords & { readonly title?: string; readonly intro?: string }): ReactElement {
+}: WaitlistWords & {
+	/** An anchor, so a link to "#waitlist" scrolls to the form. */
+	readonly id?: string;
+	/** The section tone, as on every block: base, tint, inverse or brand. */
+	readonly tone?: string;
+	readonly title?: string;
+	readonly intro?: string;
+}): ReactElement {
 	const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim();
 	if (!siteKey) throw new TurnstileSiteKeyMissingError();
 	return (
-		<Section name="Waitlist" title={title} intro={intro}>
+		<Section name="Waitlist" id={id} tone={tone} title={title} intro={intro}>
 			<WaitlistForm siteKey={siteKey} words={words} />
 		</Section>
 	);

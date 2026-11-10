@@ -16,8 +16,10 @@ export const site = defineSiteConfig({
 		{ label: "Pricing", href: "/pricing" },
 		{ label: "About", href: "/about" },
 	],
+	header: { layout: "start", action: null },
 	mdxComponents: ["Waitlist"],
 	footer: {
+		layout: "columns",
 		columns: [
 			{
 				title: "Company",

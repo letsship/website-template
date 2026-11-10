@@ -49,6 +49,13 @@ export const NOT_COPIED = new Set([
 	"playwright-report",
 	"next-env.d.ts",
 	"tsconfig.tsbuildinfo",
+	// A lockfile in the copy would make ship-site take .e2e-site/ as the project root, and the
+	// build could not reach the linked node_modules outside it. Without one, the root is this repo.
+	"pnpm-lock.yaml",
+	"package-lock.json",
+	"yarn.lock",
+	"bun.lock",
+	"bun.lockb",
 ]);
 
 const WAITLIST_PAGE = `---
