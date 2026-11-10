@@ -9,17 +9,7 @@
 //
 //   node e2e-worker/serve.mjs --port 4174
 import { execFileSync } from "node:child_process";
-import {
-	cpSync,
-	existsSync,
-	mkdirSync,
-	readdirSync,
-	readFileSync,
-	rmSync,
-	statSync,
-	symlinkSync,
-	writeFileSync,
-} from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";
 import { dirname, extname, join, normalize } from "node:path";
 import { DatabaseSync } from "node:sqlite";
@@ -50,7 +40,7 @@ export const NOT_COPIED = new Set([
 	"next-env.d.ts",
 	"tsconfig.tsbuildinfo",
 	// A lockfile in the copy would make ship-site take .e2e-site/ as the project root, and the
-	// build could not reach the linked node_modules outside it. Without one, the root is this repo.
+	// build could not reach this repo's node_modules outside it. Without one, the root is this repo.
 	"pnpm-lock.yaml",
 	"package-lock.json",
 	"yarn.lock",
@@ -80,14 +70,20 @@ function assemble() {
 	for (const entry of readdirSync(ROOT).filter((name) => !NOT_COPIED.has(name))) {
 		cpSync(join(ROOT, entry), join(SITE, entry), { recursive: true });
 	}
-	symlinkSync(join(ROOT, "node_modules"), join(SITE, "node_modules"), "dir");
+	// No node_modules in the copy: the build finds this repo's own one above .e2e-site/, as Node
+	// resolves. A link there was scanned by Tailwind in a git repo (the `node_modules/` ignore rule
+	// matches a folder, not a link) and put Next's own palette classes into the CSS.
+	// The copy is a repository of its own, as the site is: inside this repo it is an ignored folder,
+	// and Tailwind then scanned files the site's own .gitignore leaves out, so the site check
+	// refused colours from outside the brand.
+	execFileSync("git", ["init", "--quiet"], { cwd: SITE });
 	writeFileSync(join(SITE, "content", "pages", "join.mdx"), WAITLIST_PAGE);
 	writeFileSync(join(SITE, ".env.production"), `NEXT_PUBLIC_TURNSTILE_SITE_KEY=${FILE_SITE_KEY}\n`);
 }
 
 function build() {
 	const env = { ...process.env, NEXT_PUBLIC_TURNSTILE_SITE_KEY: TEST_SITE_KEY };
-	execFileSync(join(SITE, "node_modules", ".bin", "ship-site"), ["build"], { cwd: SITE, env, stdio: "inherit" });
+	execFileSync(join(ROOT, "node_modules", ".bin", "ship-site"), ["build"], { cwd: SITE, env, stdio: "inherit" });
 }
 
 /** The site's D1 database, as SQLite: the same SQL, through the calls the Worker makes. */

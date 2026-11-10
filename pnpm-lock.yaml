@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@lets-ship/brand-dna':
-        specifier: ^3.0.0
-        version: 3.0.0(csstype@3.2.3)(react@19.3.1)
+        specifier: ^3.1.0
+        version: 3.1.0(csstype@3.2.3)(react@19.3.1)
       '@lets-ship/site':
-        specifier: ^3.0.0
-        version: 3.0.0(fbc0cdbde7675744010095523e12c5ed)
+        specifier: ^3.1.0
+        version: 3.1.0(fbc0cdbde7675744010095523e12c5ed)
       fumadocs-core:
         specifier: 16.17.5
         version: 16.17.5(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.5)(@types/mdast@4.0.4)(@types/react@19.3.0)(lucide-react@1.65.0(@types/react@19.3.0)(react@19.3.1))(next@16.4.3(@playwright/test@1.64.1)(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(zod@4.6.7)
@@ -487,13 +487,13 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@lets-ship/brand-dna@3.0.0':
-    resolution: {integrity: sha512-uf+XvU8z1YHYUofok8VQYjsTGWQHTXLA71/VELVbYlTleJyTzLggNxm2U9DI+n52HJsJVOw9EdfRdmEHbRgYfQ==}
+  '@lets-ship/brand-dna@3.1.0':
+    resolution: {integrity: sha512-qMtNvbEvANroJ1DWuSliOFxXRMamH00wwNAhHc5Uye+8K7iFbTRLofOkgusWxt59mGi3KOSgKuSnOQRvd6WPRQ==}
     engines: {node: '>=20.12'}
     hasBin: true
 
-  '@lets-ship/site@3.0.0':
-    resolution: {integrity: sha512-lOg/HYEQmD3g5flwIlKmO+AVtz6sA7nZwA1m1I3ydU9zi6iPE7aRagLQFxK31RWCrsoj0dw7A4VKMaI7y4bPTw==}
+  '@lets-ship/site@3.1.0':
+    resolution: {integrity: sha512-sgiCBub3dx/WCpCGF7fXf1S10JMMQ5MqyGvUu5fuq9ZJFQBSP+JvmsFQrXouS8TxcCdr7YM34al9jZ+2E6nuYw==}
     engines: {node: '>=20.12'}
     hasBin: true
     peerDependencies:
@@ -2139,7 +2139,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@lets-ship/brand-dna@3.0.0(csstype@3.2.3)(react@19.3.1)':
+  '@lets-ship/brand-dna@3.1.0(csstype@3.2.3)(react@19.3.1)':
     dependencies:
       '@takumi-rs/wasm': 2.14.0(csstype@3.2.3)(react@19.3.1)
       culori: 4.0.2
@@ -2150,9 +2150,9 @@ snapshots:
       - preact
       - react
 
-  '@lets-ship/site@3.0.0(fbc0cdbde7675744010095523e12c5ed)':
+  '@lets-ship/site@3.1.0(fbc0cdbde7675744010095523e12c5ed)':
     dependencies:
-      '@lets-ship/brand-dna': 3.0.0(csstype@3.2.3)(react@19.3.1)
+      '@lets-ship/brand-dna': 3.1.0(csstype@3.2.3)(react@19.3.1)
       '@phosphor-icons/react': 2.1.10(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       fumadocs-core: 16.17.5(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.5)(@types/mdast@4.0.4)(@types/react@19.3.0)(lucide-react@1.65.0(@types/react@19.3.0)(react@19.3.1))(next@16.4.3(@playwright/test@1.64.1)(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(zod@4.6.7)
       fumadocs-ui: '@fumadocs/base-ui@16.17.5(@types/mdx@2.0.14)(@types/react@19.3.0)(fumadocs-core@16.17.5(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.5)(@types/mdast@4.0.4)(@types/react@19.3.0)(lucide-react@1.65.0(@types/react@19.3.0)(react@19.3.1))(next@16.4.3(@playwright/test@1.64.1)(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(zod@4.6.7))(next@16.4.3(@playwright/test@1.64.1)(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(tailwindcss@4.3.3)(takumi-js@2.14.0(csstype@3.2.3)(react@19.3.1))'
