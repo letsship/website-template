@@ -18,8 +18,8 @@
 		"test:determinism": "node scripts/determinism.mjs"
 	},
 	"dependencies": {
-		"@lets-ship/brand-dna": "^3.2.0",
-		"@lets-ship/site": "^3.2.0",
+		"@lets-ship/brand-dna": "^3.3.0",
+		"@lets-ship/site": "^3.3.0",
 		"fumadocs-core": "16.17.5",
 		"fumadocs-mdx": "15.4.7",
 		"fumadocs-ui": "npm:@fumadocs/base-ui@16.17.5",
