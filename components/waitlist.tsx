@@ -1,4 +1,5 @@
-import { Section } from "@lets-ship/site/website/blocks/parts";
+import { SIGNUP_LAYOUTS, signupView } from "@lets-ship/site/website/blocks/signup";
+import { variantOf } from "@lets-ship/site/website/blocks/variant";
 import type { ReactElement } from "react";
 import { WaitlistForm, type WaitlistWords } from "./waitlist-form";
 
@@ -21,26 +22,38 @@ export class TurnstileSiteKeyMissingError extends Error {
  * A sign-up form for the site's waitlist: an email field, a Turnstile check and a button. It posts
  * to the site's own Worker (`public/_worker/`), which checks the token and stores the address in
  * the site's database. Every word a visitor reads comes from the props, in the site's language.
+ * The section is one of the engine's sign-up layouts, so it looks like the Newsletter block.
  */
 export function Waitlist({
 	id,
 	tone,
+	variant,
 	title,
 	intro,
+	note,
 	...words
 }: WaitlistWords & {
 	/** An anchor, so a link to "#waitlist" scrolls to the form. */
 	readonly id?: string;
 	/** The section tone, as on every block: base, tint, inverse or brand. */
 	readonly tone?: string;
+	/** The layout: panel (the words beside the form), start or centered. Without it: panel. */
+	readonly variant?: string;
 	readonly title?: string;
 	readonly intro?: string;
+	/** A line under the form, such as how often mail comes. */
+	readonly note?: string;
 }): ReactElement {
 	const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim();
 	if (!siteKey) throw new TurnstileSiteKeyMissingError();
-	return (
-		<Section name="Waitlist" id={id} tone={tone} title={title} intro={intro}>
-			<WaitlistForm siteKey={siteKey} words={words} />
-		</Section>
-	);
+	return signupView(variantOf("Waitlist", variant ?? "panel", SIGNUP_LAYOUTS), {
+		name: "Waitlist",
+		id,
+		tone,
+		// A page that names no title still needs a heading over its form: the button's words say what it is.
+		title: title ?? words.button,
+		text: intro,
+		note,
+		form: <WaitlistForm siteKey={siteKey} words={words} />,
+	});
 }

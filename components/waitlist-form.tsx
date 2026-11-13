@@ -1,5 +1,6 @@
 "use client";
 
+import { SignupDone, SignupFields } from "@lets-ship/site/website/blocks/signup";
 import { type FormEvent, type ReactElement, useEffect, useId, useRef, useState } from "react";
 import { EMAIL_MAX_LENGTH, WAITLIST_ACTION, WAITLIST_PATH } from "@/public/_worker/contract.js";
 
@@ -62,6 +63,8 @@ function useTurnstile(siteKey: string, onToken: (token: string | null) => void, 
 				widget.current = turnstile.render(slot.current, {
 					sitekey: siteKey,
 					action: WAITLIST_ACTION,
+					// The widget shows itself only when it must ask the visitor something.
+					appearance: "interaction-only",
 					callback: (token: string) => onToken(token),
 					"expired-callback": () => onToken(null),
 					"error-callback": onError,
@@ -103,58 +106,67 @@ export function WaitlistForm({
 }): ReactElement {
 	const id = useId();
 	const [status, setStatus] = useState<Status>("ready");
-	const [token, setToken] = useState<string | null>(null);
-	const [onError] = useState(() => () => setStatus("failed"));
-	const { slot, reset } = useTurnstile(siteKey, setToken, onError);
+	const token = useRef<string | null>(null);
+	// The address of a visitor who pressed the button before the check gave its token.
+	const waiting = useRef<string | null>(null);
+	const reset = useRef<(() => void) | null>(null);
 
-	const submit = async (event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-		const email = String(new FormData(event.currentTarget).get("email") ?? "");
-		if (!token) return;
+	const [send] = useState(() => async (email: string, checked: string) => {
 		setStatus("sending");
-		const next = await postSignUp(email, token);
+		const next = await postSignUp(email, checked);
 		setStatus(next);
 		// A token is good for one check, so a refused sign-up needs a new one.
 		if (next !== "done") {
-			setToken(null);
-			reset();
+			token.current = null;
+			reset.current?.();
 		}
+	});
+	const [onToken] = useState(() => (next: string | null) => {
+		token.current = next;
+		const email = waiting.current;
+		if (next === null || email === null) return;
+		waiting.current = null;
+		void send(email, next);
+	});
+	const [onError] = useState(() => () => {
+		waiting.current = null;
+		setStatus("failed");
+	});
+	const turnstile = useTurnstile(siteKey, onToken, onError);
+	reset.current = turnstile.reset;
+
+	const submit = (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		const email = String(new FormData(event.currentTarget).get("email") ?? "");
+		if (token.current) {
+			void send(email, token.current);
+			return;
+		}
+		// The check is still at work: the form waits for its token, then sends.
+		waiting.current = email;
+		setStatus("sending");
 	};
 
 	if (status === "done") {
 		return (
-			<p className="site-card site-card-text" role="status" data-waitlist-state="done">
-				{words.success}
-			</p>
+			<div data-waitlist-state="done">
+				<SignupDone text={words.success} />
+			</div>
 		);
 	}
-	const message = status === "invalid" ? words.invalidEmail : status === "failed" ? words.failed : null;
+	const message = status === "invalid" ? words.invalidEmail : status === "failed" ? words.failed : undefined;
 	return (
-		<form className="site-card flex flex-col gap-3" onSubmit={submit} data-waitlist-state={status} noValidate>
-			<label htmlFor={`${id}-email`} className="site-card-title">
-				{words.label}
-			</label>
-			<input
+		<form className="site-form" onSubmit={submit} data-waitlist-state={status} noValidate>
+			<SignupFields
 				id={`${id}-email`}
-				name="email"
-				type="email"
-				autoComplete="email"
-				required
+				label={words.label}
+				button={words.button}
 				maxLength={EMAIL_MAX_LENGTH}
-				aria-describedby={message ? `${id}-message` : undefined}
-				className="rounded-md border border-[var(--site-border)] bg-transparent px-3 py-2 text-[var(--site-fg)]"
-			/>
-			<div ref={slot} />
-			<div>
-				<button type="submit" className="site-button" disabled={!token || status === "sending"}>
-					{words.button}
-				</button>
-			</div>
-			{message ? (
-				<p id={`${id}-message`} role="alert" className="site-card-text">
-					{message}
-				</p>
-			) : null}
+				busy={status === "sending"}
+				message={message}
+			>
+				<div ref={turnstile.slot} className="site-signup-check" />
+			</SignupFields>
 		</form>
 	);
 }

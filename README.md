@@ -58,6 +58,8 @@ The `Waitlist` block is a sign-up form: an email field, a Turnstile check and a 
 />
 ```
 
+The section has three layouts. Set `variant` to `panel` (the words beside the form), `start` or `centered`. Without `variant`, the layout is `panel`. Set `note` to add a line under the form, and `intro` to add a line under the title.
+
 The form posts to `/api/waitlist`, which the site's own Worker in `public/_worker/` answers. The Worker checks the Turnstile token and stores the address in the site's database, in the table that `migrations/0001_create_waitlist.sql` makes. A repeat sign-up stores nothing new, and it gets the same answer as a new one.
 
 The form works only where the site's Worker runs. `ship.yml` names it in `worker` on each SHIP-hosted entry, and SHIP runs it only for a site that SHIP made. In this template, `ship.yml` names no Worker, so the site stays static.

@@ -12,8 +12,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(csstype@3.2.3)(react@19.3.1)
       '@lets-ship/site':
-        specifier: ^3.3.0
-        version: 3.3.0(fbc0cdbde7675744010095523e12c5ed)
+        specifier: ^3.4.0
+        version: 3.4.0(fbc0cdbde7675744010095523e12c5ed)
       fumadocs-core:
         specifier: 16.17.5
         version: 16.17.5(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.5)(@types/mdast@4.0.4)(@types/react@19.3.0)(lucide-react@1.65.0(@types/react@19.3.0)(react@19.3.1))(next@16.4.3(@playwright/test@1.64.1)(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(zod@4.6.7)
@@ -492,8 +492,8 @@ packages:
     engines: {node: '>=20.12'}
     hasBin: true
 
-  '@lets-ship/site@3.3.0':
-    resolution: {integrity: sha512-aMpE7558SokPYvf8ft5gSrHfWfytLYDZ7c3/5cXoOP6/LKvKK+K9wPF/KOi/nbk2dj3QW5N3hHvN5081cUZAbw==}
+  '@lets-ship/site@3.4.0':
+    resolution: {integrity: sha512-/F2pywkKvWgWilnxDoNGejfH2JO9pfgidpbEN6ROrCjGAZF25XuT2j0j513XOUHk7swkEXiol8K+8TELhr4MMQ==}
     engines: {node: '>=20.12'}
     hasBin: true
     peerDependencies:
@@ -2150,7 +2150,7 @@ snapshots:
       - preact
       - react
 
-  '@lets-ship/site@3.3.0(fbc0cdbde7675744010095523e12c5ed)':
+  '@lets-ship/site@3.4.0(fbc0cdbde7675744010095523e12c5ed)':
     dependencies:
       '@lets-ship/brand-dna': 3.3.0(csstype@3.2.3)(react@19.3.1)
       '@phosphor-icons/react': 2.1.10(react-dom@19.3.1(react@19.3.1))(react@19.3.1)

@@ -19,7 +19,7 @@
 	},
 	"dependencies": {
 		"@lets-ship/brand-dna": "^3.3.0",
-		"@lets-ship/site": "^3.3.0",
+		"@lets-ship/site": "^3.4.0",
 		"fumadocs-core": "16.17.5",
 		"fumadocs-mdx": "15.4.7",
 		"fumadocs-ui": "npm:@fumadocs/base-ui@16.17.5",
