@@ -19,11 +19,11 @@
 	},
 	"dependencies": {
 		"@lets-ship/brand-dna": "^3.5.0",
-		"@lets-ship/site": "^3.8.0",
+		"@lets-ship/site": "^3.8.1",
 		"fumadocs-core": "16.17.5",
 		"fumadocs-mdx": "15.4.7",
 		"fumadocs-ui": "npm:@fumadocs/base-ui@16.17.5",
-		"next": "^16.2.12",
+		"next": "^16.4.6",
 		"react": "^19.2.6",
 		"react-dom": "^19.2.6"
 	},
